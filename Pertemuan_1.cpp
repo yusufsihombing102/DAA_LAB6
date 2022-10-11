@@ -1,17 +1,15 @@
-/* Pertemuan 1 */
-/* Program : struktur data statis mahasiswa */
 #include <conio.h>
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
-#define nmax 5 // banyak data yang dapat ditampung
+#define nmax 5 // jumlah data max yang dapat ditampung
 using namespace std;
 
 int n = 0; // variable n sebagai banyak data yang telah tersimpan
 struct data
 { // struktur data mahasiswa yg akan diinput
 	int nim;
-	char nama[20];
+	char nama[15];
 	char kom;
 };
 struct data maba[nmax]; // deklarasi variabel bertipe struct
@@ -43,7 +41,7 @@ menu:
 		exit(1); // atau bisa pakai return(0)
 	else
 	{
-		cout << "pilihan tak tersedia...!!!\n";
+		cout << "pilihan anda tidak tersedia...!!!\n";
 	}
 	goto menu;
 	getch();
@@ -67,7 +65,7 @@ void tambah_data()
 void hapus_data()
 {
 	int x;
-	cout << "pilih data yang akan dihapus (1 s.d. 5) : ";
+	cout << "pilih data yang ingin dihapus (1 s.d. 5) : ";
 	cin >> x;
 	if (x < n && x > 0)
 	{
@@ -110,7 +108,7 @@ void edit_data()
 	cin >> maba[i].nama;
 	cout << "Nim\t: ";
 	cin >> maba[i].nim;
-	cout << "Kelas\t: ";
+	cout << "Kom\t: ";
 	cin >> maba[i].kom;
 	tampilkan_data();
 }
